@@ -1,70 +1,115 @@
-# Getting Started with Create React App
+# 🏥 MedCare — Hospital Management System
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A full-stack Hospital Management System built to streamline patient care, doctor scheduling, billing, and hospital operations through a clean, modern dashboard.
 
-## Available Scripts
+![Tech](https://img.shields.io/badge/React-18-61DAFB?style=flat&logo=react)
+![Tech](https://img.shields.io/badge/Node.js-Express-339933?style=flat&logo=node.js)
+![Tech](https://img.shields.io/badge/MySQL-Database-4479A1?style=flat&logo=mysql)
+![Tech](https://img.shields.io/badge/JWT-Auth-black?style=flat&logo=jsonwebtokens)
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## 📌 Overview
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+MedCare is a complete Hospital Management System designed for hospital staff to manage patients, doctors, appointments, billing, and reports — all from a single, secure dashboard. It replaces manual record-keeping with a centralized digital workflow.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## ✨ Features
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- 🔐 **Secure Authentication** — JWT-based login with bcrypt password hashing
+- 📊 **Interactive Dashboard** — Real-time stats, patient trends, and appointment overview with charts
+- 👤 **Patient Management** — Add, search, and manage patient records with downloadable PDF reports
+- 👨‍⚕️ **Doctor Management** — Maintain doctor profiles with specialization-based filtering
+- 📅 **Appointment Scheduling** — Book appointments linking patients and doctors with live status tracking
+- 💰 **Billing & Invoicing** — Generate and track patient bills with downloadable PDF invoices
+- 📈 **Statistics & Analytics** — Visual insights including weekly trends and a top-doctors leaderboard
+- 🔔 **Real-Time Notifications** — Click-to-navigate alerts for new patients, appointments, and payments
+- 🤖 **AI Assistant** — Symptom-based guidance powered by the Groq LLM API
+- ⚙️ **Hospital Settings** — Profile customization, logo upload, staff management, and data backup
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 🛠️ Tech Stack
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+**Frontend**
+- React.js (Create React App)
+- Recharts (data visualization)
+- React Icons
+- jsPDF (PDF generation)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+**Backend**
+- Node.js + Express.js
+- MySQL (relational database)
+- JWT + bcrypt.js (authentication & security)
+- Groq SDK (AI integration)
 
-### `npm run eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## 📂 Project Structure
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+---
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## 🚀 Getting Started
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Prerequisites
+- Node.js installed
+- MySQL Server installed
 
-## Learn More
+### 1. Clone the repository
+```bash
+git clone https://github.com/naushadkhan18072003-cyber/medcare-hospital-management.git
+cd medcare-hospital-management
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### 2. Set up the database
+Create a MySQL database named `hospital_db` and run the schema (tables: `patients`, `doctors`, `appointments`, `users`, `bills`).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### 3. Configure environment variables
+Create a `.env` file inside the `backend` folder:
+```env
+DB_HOST=localhost
+DB_USER=root
+DB_PASSWORD=your_mysql_password
+DB_NAME=hospital_db
+PORT=5000
+JWT_SECRET=your_jwt_secret
+GROQ_API_KEY=your_groq_api_key
+```
 
-### Code Splitting
+### 4. Install dependencies & run
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+**Backend:**
+```bash
+cd backend
+npm install
+npm run dev
+```
 
-### Analyzing the Bundle Size
+**Frontend:**
+```bash
+cd frontend
+npm install
+npm start
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+App will be available at `http://localhost:3000`, API at `http://localhost:5000`.
 
-### Making a Progressive Web App
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## 🔮 Future Enhancements
 
-### Advanced Configuration
+- Role-based access control (Doctor / Receptionist / Admin views)
+- SMS/Email appointment reminders
+- Pharmacy & inventory management module
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+---
 
-### Deployment
+## 👤 Author
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+**Naushad Khan**
+[GitHub](https://github.com/naushadkhan18072003-cyber)
 
-### `npm run build` fails to minify
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+⭐ If you found this project useful, consider giving it a star!
