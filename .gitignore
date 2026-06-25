@@ -1,3 +1,4 @@
+frontend/.env.production 
 node_modules/ 
 .env 
 backend/node_modules/ 
