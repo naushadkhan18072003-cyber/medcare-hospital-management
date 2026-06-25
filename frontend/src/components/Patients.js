@@ -14,14 +14,14 @@ function Patients({ search, addNotification }) {
   useEffect(() => { fetchPatients(); }, []);
 
   const fetchPatients = async () => {
-    const res = await fetch('http://localhost:5000/api/patients');
+    const res = await fetch('https://outstanding-harmony-production-d4b2.up.railway.app/api/patients');
     const data = await res.json();
     setPatients(data);
   };
 
   const addPatient = async () => {
     if (!name || !age || !phone) { alert('Please fill all fields!'); return; }
-    await fetch('http://localhost:5000/api/patients', {
+    await fetch('https://outstanding-harmony-production-d4b2.up.railway.app/api/patients', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ name, age, gender, phone, address })
@@ -34,7 +34,7 @@ function Patients({ search, addNotification }) {
 
   const deletePatient = async (id) => {
     if (!window.confirm('Delete this patient?')) return;
-    await fetch(`http://localhost:5000/api/patients/${id}`, { method: 'DELETE' });
+    await fetch(`https://outstanding-harmony-production-d4b2.up.railway.app/api/patients/${id}`, { method: 'DELETE' });
     fetchPatients();
   };
 

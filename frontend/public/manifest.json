@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "MedCare",
+  "name": "MedCare Hospital Management System",
   "icons": [
     {
       "src": "favicon.ico",
@@ -18,8 +18,11 @@
       "sizes": "512x512"
     }
   ],
-  "start_url": ".",
+  "start_url": "/",
   "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "theme_color": "#0d2b1f",
+  "background_color": "#0d2b1f",
+  "description": "Hospital Management System - Manage patients, doctors, appointments and billing",
+  "orientation": "portrait",
+  "categories": ["medical", "health", "productivity"]
 }

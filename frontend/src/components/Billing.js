@@ -17,13 +17,13 @@ function Billing({ addNotification }) {
   }, []);
 
   const fetchBills = async () => {
-    const res = await fetch('http://localhost:5000/api/bills');
+    const res = await fetch('https://outstanding-harmony-production-d4b2.up.railway.app/api/bills');
     const data = await res.json();
     setBills(data);
   };
 
   const fetchPatients = async () => {
-    const res = await fetch('http://localhost:5000/api/patients');
+    const res = await fetch('https://outstanding-harmony-production-d4b2.up.railway.app/api/patients');
     const data = await res.json();
     setPatients(data);
   };
@@ -33,7 +33,7 @@ function Billing({ addNotification }) {
       alert('Please fill all fields!');
       return;
     }
-    await fetch('http://localhost:5000/api/bills', {
+    await fetch('https://outstanding-harmony-production-d4b2.up.railway.app/api/bills', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ patient_id: patientId, description, amount, status })
@@ -46,7 +46,7 @@ function Billing({ addNotification }) {
   };
 
   const updateBillStatus = async (id, newStatus) => {
-    await fetch(`http://localhost:5000/api/bills/${id}`, {
+    await fetch(`https://outstanding-harmony-production-d4b2.up.railway.app/api/bills/${id}`, {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ status: newStatus })
@@ -56,7 +56,7 @@ function Billing({ addNotification }) {
 
   const deleteBill = async (id) => {
     if (!window.confirm('Delete this bill?')) return;
-    await fetch(`http://localhost:5000/api/bills/${id}`, { method: 'DELETE' });
+    await fetch(`https://outstanding-harmony-production-d4b2.up.railway.app/api/bills/${id}`, { method: 'DELETE' });
     fetchBills();
   };
 

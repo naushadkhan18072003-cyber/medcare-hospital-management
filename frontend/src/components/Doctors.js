@@ -13,14 +13,14 @@ function Doctors({ search, addNotification }) {
   useEffect(() => { fetchDoctors(); }, []);
 
   const fetchDoctors = async () => {
-    const res = await fetch('http://localhost:5000/api/doctors');
+    const res = await fetch('https://outstanding-harmony-production-d4b2.up.railway.app/api/doctors');
     const data = await res.json();
     setDoctors(data);
   };
 
   const addDoctor = async () => {
     if (!name || !specialization || !phone || !email) { alert('Please fill all fields!'); return; }
-    await fetch('http://localhost:5000/api/doctors', {
+    await fetch('https://outstanding-harmony-production-d4b2.up.railway.app/api/doctors', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ name, specialization, phone, email })
@@ -33,7 +33,7 @@ function Doctors({ search, addNotification }) {
 
   const deleteDoctor = async (id) => {
     if (!window.confirm('Delete this doctor?')) return;
-    await fetch(`http://localhost:5000/api/doctors/${id}`, { method: 'DELETE' });
+    await fetch(`https://outstanding-harmony-production-d4b2.up.railway.app/api/doctors/${id}`, { method: 'DELETE' });
     fetchDoctors();
   };
 

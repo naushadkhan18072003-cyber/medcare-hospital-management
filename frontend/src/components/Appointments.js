@@ -18,26 +18,26 @@ function Appointments({ addNotification }) {
   }, []);
 
   const fetchAppointments = async () => {
-    const res = await fetch('http://localhost:5000/api/appointments');
+    const res = await fetch('https://outstanding-harmony-production-d4b2.up.railway.app/api/appointments');
     const data = await res.json();
     setAppointments(data);
   };
 
   const fetchPatients = async () => {
-    const res = await fetch('http://localhost:5000/api/patients');
+    const res = await fetch('https://outstanding-harmony-production-d4b2.up.railway.app/api/patients');
     const data = await res.json();
     setPatients(data);
   };
 
   const fetchDoctors = async () => {
-    const res = await fetch('http://localhost:5000/api/doctors');
+    const res = await fetch('https://outstanding-harmony-production-d4b2.up.railway.app/api/doctors');
     const data = await res.json();
     setDoctors(data);
   };
 
   const addAppointment = async () => {
     if (!patientId || !doctorId || !date) { alert('Please fill all fields!'); return; }
-    await fetch('http://localhost:5000/api/appointments', {
+    await fetch('https://outstanding-harmony-production-d4b2.up.railway.app/api/appointments', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ patient_id: patientId, doctor_id: doctorId, appointment_date: date })
@@ -49,7 +49,7 @@ if (addNotification) addNotification('appointment', 'Appointment Booked', 'New a
   };
 
   const updateStatus = async (id, newStatus) => {
-    await fetch(`http://localhost:5000/api/appointments/${id}`, {
+    await fetch(`https://outstanding-harmony-production-d4b2.up.railway.app/api/appointments/${id}`, {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ status: newStatus })
@@ -59,7 +59,7 @@ if (addNotification) addNotification('appointment', 'Appointment Booked', 'New a
 
   const deleteAppointment = async (id) => {
     if (!window.confirm('Delete this appointment?')) return;
-    await fetch(`http://localhost:5000/api/appointments/${id}`, { method: 'DELETE' });
+    await fetch(`https://outstanding-harmony-production-d4b2.up.railway.app/api/appointments/${id}`, { method: 'DELETE' });
     fetchAppointments();
   };
 

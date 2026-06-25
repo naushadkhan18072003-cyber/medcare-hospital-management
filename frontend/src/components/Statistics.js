@@ -14,11 +14,11 @@ function Statistics() {
   }, []);
 
   const fetchData = async () => {
-    const pRes = await fetch('http://localhost:5000/api/patients');
+    const pRes = await fetch('https://outstanding-harmony-production-d4b2.up.railway.app/api/patients');
     const pData = await pRes.json();
-    const dRes = await fetch('http://localhost:5000/api/doctors');
+    const dRes = await fetch('https://outstanding-harmony-production-d4b2.up.railway.app/api/doctors');
     const dData = await dRes.json();
-    const aRes = await fetch('http://localhost:5000/api/appointments');
+    const aRes = await fetch('https://outstanding-harmony-production-d4b2.up.railway.app/api/appointments');
     const aData = await aRes.json();
     setStats({ patients: pData.length, doctors: dData.length, appointments: aData.length });
     setAppointments(aData);

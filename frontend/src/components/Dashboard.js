@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import API_URL from '../api';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import { FiCalendar, FiPhone, FiUsers } from 'react-icons/fi';
 import { FaUserMd } from 'react-icons/fa';
@@ -28,18 +29,18 @@ function Dashboard({ user }) {
   }, []);
 
   const fetchStats = async () => {
-    const pRes = await fetch('http://localhost:5000/api/patients');
+    const pRes = await fetch('https://outstanding-harmony-production-d4b2.up.railway.app/api/patients');
     const pData = await pRes.json();
-    const dRes = await fetch('http://localhost:5000/api/doctors');
+    const dRes = await fetch('https://outstanding-harmony-production-d4b2.up.railway.app/api/doctors');
     const dData = await dRes.json();
-    const aRes = await fetch('http://localhost:5000/api/appointments');
+    const aRes = await fetch('https://outstanding-harmony-production-d4b2.up.railway.app/api/appointments');
     const aData = await aRes.json();
     setStats({ patients: pData.length, doctors: dData.length, appointments: aData.length });
     setAppointments(aData.slice(0, 5));
   };
 
   const fetchAppointments = async () => {
-    const res = await fetch('http://localhost:5000/api/appointments');
+    const res = await fetch('https://outstanding-harmony-production-d4b2.up.railway.app/api/appointments');
     const data = await res.json();
     setAppointments(data.slice(0, 5));
   };
